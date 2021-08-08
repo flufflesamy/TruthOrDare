@@ -20,7 +20,7 @@ namespace TruthOrDare
     /// </summary>
     public partial class PlayWindow : Window
     {
-        public int currentPlayerIndex = 0;
+        int currentPlayerIndex = 0;
 
         public PlayWindow()
         {
@@ -28,6 +28,7 @@ namespace TruthOrDare
             if (PlayerList != null)
             {
                 currentPlayerLbl.Content = PlayerList[0].Name;
+                prevPlayerLbl.Content = "First Player";
                 if (PlayerList.Count > 1)
                 {
                     nextPlayerLbl.Content = PlayerList[1].Name;
@@ -61,12 +62,20 @@ namespace TruthOrDare
 
         private void NextPlayer_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (currentPlayerIndex < PlayerList.Count - 1)
+            {
+                currentPlayerIndex++;
+                UpdatePrevNext();
+            }
         }
 
         private void PrevPlayer_Click(object sender, RoutedEventArgs e)
         {
-
+            if (currentPlayerIndex > 0)
+            {
+                currentPlayerIndex--;
+                UpdatePrevNext();
+            }
         }
 
         private void UpdatePlayerList()
@@ -75,5 +84,44 @@ namespace TruthOrDare
             playersTxtbox.Text = listText;
         }
 
+        private void UpdatePrevNext()
+        {
+            currentPlayerLbl.Content = PlayerList[currentPlayerIndex].Name;
+            if (currentPlayerIndex < PlayerList.Count -1)
+            {
+                nextPlayerLbl.Content = PlayerList[currentPlayerIndex + 1].Name;
+            }
+            else
+            {
+                nextPlayerLbl.Content = "Last Player";
+            }
+
+            if (currentPlayerIndex > 0)
+            {
+                prevPlayerLbl.Content = PlayerList[currentPlayerIndex - 1].Name;
+            }
+            else
+            {
+                prevPlayerLbl.Content = "First Player";
+            }
+        }
+
+        private void macroBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string listText = string.Join(", ", PlayerList.Select(r => r.Name));
+
+            string macroText = String.Format("/yell Current players on the list: {0}.", listText);
+
+            Clipboard.SetText(macroText);
+        }
+
+        private void remplayBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string listText = string.Join(", ", PlayerList.Select(r => r.Name).Skip(currentPlayerIndex));
+
+            string macroText = String.Format("/yell Remaining players on the list: {0}.", listText);
+
+            Clipboard.SetText(macroText);
+        }
     }
 }

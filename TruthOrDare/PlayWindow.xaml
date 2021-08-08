@@ -5,20 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TruthOrDare"
         mc:Ignorable="d"
-        Title="PlayWindow" Height="450" Width="800">
+        Title="Current Game" Height="450" Width="800" ResizeMode="NoResize">
     <Grid Background="#FF1B1B1B">
-        <Button x:Name="playAgainBtn" Content="Play Again" HorizontalAlignment="Left" Margin="647,375,0,0" VerticalAlignment="Top" Click="PlayAgain_Click" FontSize="20" FontWeight="Bold" Foreground="Red"/>
-        <Button Content="Next Player" HorizontalAlignment="Left" Margin="443,375,0,0" VerticalAlignment="Top" Click="NextPlayer_Click" FontSize="20" FontWeight="Bold" Background="#FFEAEAEA"/>
-        <Button Content="Previous Player" HorizontalAlignment="Left" Margin="227,375,0,0" VerticalAlignment="Top" Click="PrevPlayer_Click" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="appendBtn" Content="Append" HorizontalAlignment="Left" Margin="73,375,0,0" VerticalAlignment="Top" Click="Append_Click" FontSize="20" FontWeight="Bold"/>
-        <Label Content="Current Player:" HorizontalAlignment="Left" Margin="73,35,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20" FontWeight="Bold"/>
-        <Label x:Name="currentPlayerLbl" Content="Player Name" HorizontalAlignment="Left" Margin="227,35,0,0" VerticalAlignment="Top" Foreground="Red" FontSize="20" FontWeight="Normal"/>
-        <Label Content="Next Player:" HorizontalAlignment="Left" Margin="73,77,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20" FontWeight="Bold"/>
-        <Label x:Name="nextPlayerLbl" Content="Player Name" HorizontalAlignment="Left" Margin="227,77,0,0" VerticalAlignment="Top" Foreground="Red" FontSize="20" FontWeight="Normal"/>
-        <Label Content="Prev Player:" HorizontalAlignment="Left" Margin="73,119,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20" FontWeight="Bold"/>
-        <Label x:Name="prevPlayerLbl" Content="Player Name" HorizontalAlignment="Left" Margin="227,119,0,0" VerticalAlignment="Top" Foreground="Red" FontSize="20" FontWeight="Normal"/>
-        <Label Content="Who Did They Pick?" HorizontalAlignment="Left" Margin="73,161,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20" FontWeight="Bold"/>
-        <TextBox x:Name="playersTxtbox" HorizontalAlignment="Left" Margin="487,44,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" Height="300"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="47*"/>
+            <ColumnDefinition Width="747*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="playAgainBtn" Content="Play Again" HorizontalAlignment="Left" Margin="594,375,0,0" VerticalAlignment="Top" Click="PlayAgain_Click" FontSize="20" FontWeight="Bold" Foreground="Red" Grid.Column="2"/>
+        <Button Content="Next Player" HorizontalAlignment="Left" Margin="390,375,0,0" VerticalAlignment="Top" Click="NextPlayer_Click" FontSize="20" FontWeight="Bold" Background="#FFEAEAEA" Grid.Column="2"/>
+        <Button Content="Previous Player" HorizontalAlignment="Left" Margin="174,375,0,0" VerticalAlignment="Top" Click="PrevPlayer_Click" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
+        <Button x:Name="appendBtn" Content="Append" HorizontalAlignment="Left" Margin="20,375,0,0" VerticalAlignment="Top" Click="Append_Click" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
+        <Label Content="Current Player:" HorizontalAlignment="Left" Margin="20,35,0,0" VerticalAlignment="Top" Foreground="#FFEAEAEA" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
+        <Label x:Name="currentPlayerLbl" Content="Player Name" HorizontalAlignment="Left" Margin="174,35,0,0" VerticalAlignment="Top" Foreground="Red" FontSize="20" FontWeight="Normal" Grid.Column="2"/>
+        <Label Content="Next Player:" HorizontalAlignment="Left" Margin="20,77,0,0" VerticalAlignment="Top" Foreground="#FFEAEAEA" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
+        <Label x:Name="nextPlayerLbl" Content="Player Name" HorizontalAlignment="Left" Margin="174,77,0,0" VerticalAlignment="Top" Foreground="Red" FontSize="20" FontWeight="Normal" Grid.Column="2"/>
+        <Label Content="Prev Player:" HorizontalAlignment="Left" Margin="20,119,0,0" VerticalAlignment="Top" Foreground="#FFEAEAEA" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
+        <Label x:Name="prevPlayerLbl" Content="Player Name" HorizontalAlignment="Left" Margin="174,119,0,0" VerticalAlignment="Top" Foreground="Red" FontSize="20" FontWeight="Normal" Grid.Column="2"/>
+        <TextBox x:Name="playersTxtbox" HorizontalAlignment="Left" Margin="434,77,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" Height="267" Grid.Column="2" Background="#FFEAEAEA"/>
+        <Button x:Name="macroBtn" Content="Player List Macro" HorizontalAlignment="Left" Margin="20,186,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Click="macroBtn_Click" Grid.Column="2"/>
+        <Button x:Name="remplayBtn" Content="Remaining Players Macro" HorizontalAlignment="Left" Margin="20,240,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Click="remplayBtn_Click" Grid.Column="2"/>
+        <Label Content="Player List:" HorizontalAlignment="Left" Margin="434,35,0,0" VerticalAlignment="Top" Foreground="#FFEAEAEA" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
 
     </Grid>
 </Window>

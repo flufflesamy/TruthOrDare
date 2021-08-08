@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TruthOrDare"
         mc:Ignorable="d"
-        Title="InputDialog" Height="121" Width="329">
+        Title="InputDialog" Height="105" Width="329">
     <StackPanel>
         <TextBlock Text="Enter Name" FontSize="16" />
         <TextBox x:Name="ResponseTextBox" FontSize="16" />
-        <Button Content="OK" Click="OKButton_Click" FontSize="16" />
+        <Button Content="OK" Click="OKButton_Click" FontSize="16" IsDefault="True"/>
     </StackPanel>
 </Window>

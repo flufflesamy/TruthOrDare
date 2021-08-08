@@ -5,20 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TruthOrDare"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="700">
+        Title="Truth or Dare App" Height="450" Width="700">
     <Grid Background="#FF1B1B1B">
         <Label Content="Truth Or Dare!" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="36" FontWeight="Bold" Foreground="#FFEAEAEA"/>
         <Button x:Name="StartButton" Content="Start!" HorizontalAlignment="Center" Margin="0,379,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Click="Button_Click"/>
         <TextBox x:Name="Participants" HorizontalAlignment="Left" Margin="52,90,0,0" Text="Enter text here..." TextWrapping="Wrap" VerticalAlignment="Top" Width="298" Height="273" AcceptsReturn="True" Background="#FFEAEAEA"/>
         <Label Content="Players" HorizontalAlignment="Left" Margin="52,59,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="#FFEAEAEA"/>
-        <CheckBox x:Name="autosortChkbox" Content="Autosort?" HorizontalAlignment="Left" Margin="383,90,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="#FFEAEAEA">
+        <CheckBox x:Name="autosortChkbox" Content="Autosort?" HorizontalAlignment="Left" Margin="383,110,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="#FFEAEAEA">
             <CheckBox.ToolTip>
                 <ToolTip>If checked, automatically sorts names entered in box.</ToolTip>
             </CheckBox.ToolTip>
         </CheckBox>
-        <CheckBox x:Name="randomChkbox" Content="Parse /random rolls?" HorizontalAlignment="Left" Margin="383,115,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="#FFEAEAEA">
+        <CheckBox x:Name="randomChkbox" Content="Parse /random rolls?" HorizontalAlignment="Left" Margin="383,154,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="#FFEAEAEA">
             <CheckBox.ToolTip>
-                <ToolTip Content="If checked, automatically parses and sorts rolls."/>
+                <ToolTip Content="If checked, automatically parses and sorts in-game rolls. E.g. Random! Mythic PlusUltros rolls a 570."/>
             </CheckBox.ToolTip>
         </CheckBox>
     </Grid>
