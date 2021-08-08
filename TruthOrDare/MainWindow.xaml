@@ -6,9 +6,20 @@
         xmlns:local="clr-namespace:TruthOrDare"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="700">
-    <Grid>
-        <Label Content="Truth Or Dare!" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="36" FontWeight="Bold"/>
+    <Grid Background="#FF1B1B1B">
+        <Label Content="Truth Or Dare!" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="36" FontWeight="Bold" Foreground="#FFEAEAEA"/>
         <Button x:Name="StartButton" Content="Start!" HorizontalAlignment="Center" Margin="0,379,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Click="Button_Click"/>
-        <TextBox x:Name="Participants" HorizontalAlignment="Left" Margin="48,95,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" Height="286"/>
+        <TextBox x:Name="Participants" HorizontalAlignment="Left" Margin="52,90,0,0" Text="Enter text here..." TextWrapping="Wrap" VerticalAlignment="Top" Width="298" Height="273" AcceptsReturn="True" Background="#FFEAEAEA"/>
+        <Label Content="Players" HorizontalAlignment="Left" Margin="52,59,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="#FFEAEAEA"/>
+        <CheckBox x:Name="autosortChkbox" Content="Autosort?" HorizontalAlignment="Left" Margin="383,90,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="#FFEAEAEA">
+            <CheckBox.ToolTip>
+                <ToolTip>If checked, automatically sorts names entered in box.</ToolTip>
+            </CheckBox.ToolTip>
+        </CheckBox>
+        <CheckBox x:Name="randomChkbox" Content="Parse /random rolls?" HorizontalAlignment="Left" Margin="383,115,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="#FFEAEAEA">
+            <CheckBox.ToolTip>
+                <ToolTip Content="If checked, automatically parses and sorts rolls."/>
+            </CheckBox.ToolTip>
+        </CheckBox>
     </Grid>
 </Window>

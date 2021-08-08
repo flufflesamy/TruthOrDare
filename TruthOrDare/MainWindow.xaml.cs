@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static TruthOrDare.ApplicationContext;
 
 namespace TruthOrDare
 {
@@ -23,7 +24,7 @@ namespace TruthOrDare
         public MainWindow()
         {
             InitializeComponent();
-            ApplicationContext.PlayerList = new List<Player>();
+            PlayerList = new List<Player>();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -32,10 +33,23 @@ namespace TruthOrDare
 
             for (int i = 0; i < lineCount; i++)
             {
-                ApplicationContext.PlayerList.Add(new Player(Participants.GetLineText(i)));
+                PlayerList.Add(new Player(Participants.GetLineText(i).Replace("\n", "").Replace("\r", "")));
             }
 
-            MessageBox.Show(ApplicationContext.PlayerList[0].Name.ToString());
+            if (autosortChkbox.IsChecked == true)
+            {
+                var rnd = new Random();
+                PlayerList.Shuffle();
+            }
+
+            // string listText2 = string.Join("\n", PlayerList.Select(r => r.Name));
+            // MessageBox.Show(listText2);
+
+            // Open play window
+            Window playWindow = new PlayWindow();
+            playWindow.Show();
+            var myWindow = Window.GetWindow(this);
+            myWindow.Close();
         }
     }
 }
