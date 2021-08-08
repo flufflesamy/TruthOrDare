@@ -46,14 +46,22 @@ namespace TruthOrDare
                     foreach (var item in sentenceList)
                     {
                         List<string> wordList = item.Split(' ').ToList();
-
-                        Regex rg = new Regex(@"(^[a-z]+|[A-Z]+(?![a-z])|[A-Z][a-z]+)");
-                        MatchCollection lastNameMatch = rg.Matches(item);
-
-                        rg = new Regex(@"\d+");
+                                               
+                        Regex rg = new Regex(@"\d+");
                         MatchCollection rollMatch = rg.Matches(item);
 
-                        PlayerList.Add(new Player(wordList[1] + " " + lastNameMatch[2], int.Parse(rollMatch[0].ToString())));
+                        if (wordList[1] == "You")
+                        {
+                            MessageBox.Show(rollMatch[rollMatch.Count - 1].ToString());
+                            PlayerList.Add(new Player(wordList[1], int.Parse(rollMatch[rollMatch.Count - 1].ToString())));
+                        }
+                        else
+                        {
+                            rg = new Regex(@"(^[a-z]+|[A-Z]+(?![a-z])|[A-Z][a-z]+)");
+                            MatchCollection lastNameMatch = rg.Matches(item);
+                            PlayerList.Add(new Player(wordList[1] + " " + lastNameMatch[2], int.Parse(rollMatch[rollMatch.Count - 1].ToString())));
+                        }
+
                     }
                 }
                 catch (Exception)
