@@ -51,8 +51,7 @@ namespace TruthOrDare
                         MatchCollection rollMatch = rg.Matches(item);
 
                         if (wordList[1] == "You")
-                        {
-                            MessageBox.Show(rollMatch[rollMatch.Count - 1].ToString());
+                        {                        
                             PlayerList.Add(new Player(wordList[1], int.Parse(rollMatch[rollMatch.Count - 1].ToString())));
                         }
                         else
