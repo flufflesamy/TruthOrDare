@@ -22,7 +22,7 @@
         <Label x:Name="nextPlayerLbl" Content="Player Name" HorizontalAlignment="Left" Margin="174,77,0,0" VerticalAlignment="Top" Foreground="Red" FontSize="20" FontWeight="Normal" Grid.Column="2"/>
         <Label Content="Prev Player:" HorizontalAlignment="Left" Margin="20,119,0,0" VerticalAlignment="Top" Foreground="#FFEAEAEA" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
         <Label x:Name="prevPlayerLbl" Content="Player Name" HorizontalAlignment="Left" Margin="174,119,0,0" VerticalAlignment="Top" Foreground="Red" FontSize="20" FontWeight="Normal" Grid.Column="2"/>
-        <TextBox x:Name="playersTxtbox" HorizontalAlignment="Left" Margin="434,77,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" Height="267" Grid.Column="2" Background="#FFEAEAEA"/>
+        <TextBox x:Name="playersTxtbox" HorizontalAlignment="Left" Margin="434,77,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" Height="267" Grid.Column="2" Background="#FFEAEAEA" IsReadOnly="True"/>
         <Button x:Name="macroBtn" Content="Player List Macro" HorizontalAlignment="Left" Margin="20,186,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Click="macroBtn_Click" Grid.Column="2"/>
         <Button x:Name="remplayBtn" Content="Remaining Players Macro" HorizontalAlignment="Left" Margin="20,240,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Click="remplayBtn_Click" Grid.Column="2"/>
         <Label Content="Player List:" HorizontalAlignment="Left" Margin="434,35,0,0" VerticalAlignment="Top" Foreground="#FFEAEAEA" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
