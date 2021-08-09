@@ -50,16 +50,15 @@ namespace TruthOrDare
                         Regex rg = new Regex(@"\d+");
                         MatchCollection rollMatch = rg.Matches(item);
 
-                        if (wordList[1] == "You")
-                        {                        
+                        if (wordList.Any(l => l.Contains("Random!")) && wordList[1] == "You")
+                        {
                             PlayerList.Add(new Player(wordList[1], int.Parse(rollMatch[rollMatch.Count - 1].ToString())));
                         }
-                        else
+                        else if (wordList.Any(l => l.Contains("Random!")))
                         {
                             rg = new Regex(@"(^[a-z]+|[A-Z]+(?![a-z])|[A-Z][a-z]+)");
                             MatchCollection lastNameMatch = rg.Matches(item);
-                            PlayerList.Add(new Player(wordList[1] + " " + lastNameMatch[2], int.Parse(rollMatch[rollMatch.Count - 1].ToString())));
-                        }
+                            PlayerList.Add(new Player(wordList[1] + " " + lastNameMatch[2], int.Parse(rollMatch[rollMatch.Count - 1].ToString())));                        }
 
                     }
                 }
