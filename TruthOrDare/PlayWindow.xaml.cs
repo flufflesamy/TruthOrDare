@@ -25,14 +25,12 @@ namespace TruthOrDare
         public PlayWindow()
         {
             InitializeComponent();
-            if (PlayerList != null)
+
+            currentPlayerLbl.Content = PlayerList[0].Name;
+            prevPlayerLbl.Content = "First Player";
+            if (PlayerList.Count > 1)
             {
-                currentPlayerLbl.Content = PlayerList[0].Name;
-                prevPlayerLbl.Content = "First Player";
-                if (PlayerList.Count > 1)
-                {
-                    nextPlayerLbl.Content = PlayerList[1].Name;
-                }
+                nextPlayerLbl.Content = PlayerList[1].Name;
             }
 
             UpdatePlayerList();

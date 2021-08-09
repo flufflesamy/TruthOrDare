@@ -25,11 +25,12 @@ namespace TruthOrDare
         public MainWindow()
         {
             InitializeComponent();
-            PlayerList = new List<Player>();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            PlayerList = new List<Player>();
+
             int lineCount = Participants.LineCount;
                     
             if (randomChkbox.IsChecked == true)
@@ -89,10 +90,18 @@ namespace TruthOrDare
             // MessageBox.Show(listText2);
 
             // Open play window
-            Window playWindow = new PlayWindow();
-            playWindow.Show();
-            var myWindow = Window.GetWindow(this);
-            myWindow.Close();
+            if (PlayerList.Count > 0)
+            {
+                Window playWindow = new PlayWindow();
+                playWindow.Show();
+                var myWindow = Window.GetWindow(this);
+                myWindow.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error! Must have at least one player in player list.");
+            }
+            
         }
     }
 }
