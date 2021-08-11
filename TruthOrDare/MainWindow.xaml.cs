@@ -25,10 +25,28 @@ namespace TruthOrDare
         public MainWindow()
         {
             InitializeComponent();
+
+            if (ShuffleChecked)
+            {
+                autosortChkbox.IsChecked = true;
+            }
+
+            if (RandomChecked)
+            {
+                randomChkbox.IsChecked = true;
+            }
+
+            yournameChkbox.Text = YouName;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            ShuffleChecked = autosortChkbox.IsChecked == true;
+
+            RandomChecked = randomChkbox.IsChecked == true;
+
+            YouName = yournameChkbox.Text;
+            
             PlayerList = new List<Player>();
 
             int lineCount = Participants.LineCount;
@@ -53,7 +71,7 @@ namespace TruthOrDare
 
                         if (wordList.Any(l => l.Contains("Random!")) && wordList[1] == "You")
                         {
-                            PlayerList.Add(new Player(wordList[1], int.Parse(rollMatch[rollMatch.Count - 1].ToString())));
+                            PlayerList.Add(new Player(YouName, int.Parse(rollMatch[rollMatch.Count - 1].ToString())));
                         }
                         else if (wordList.Any(l => l.Contains("Random!")))
                         {

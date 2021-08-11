@@ -10,6 +10,12 @@ namespace TruthOrDare
     {
         public static List<Player> PlayerList { get; set; }
 
+        public static bool ShuffleChecked { get; set; } = false;
+
+        public static bool RandomChecked { get; set; } = false;
+
+        public static string YouName { get; set; } = "You";
+
         private static Random rng = new Random();
 
         public static void Shuffle<T>(this IList<T> list)

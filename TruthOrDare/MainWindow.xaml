@@ -21,5 +21,7 @@
                 <ToolTip Content="If checked, automatically parses and sorts in-game rolls. E.g. Random! Mythic PlusUltros rolls a 570."/>
             </CheckBox.ToolTip>
         </CheckBox>
+        <TextBox x:Name="yournameChkbox" HorizontalAlignment="Left" Margin="481,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontSize="16" Text="You"/>
+        <Label Content="Your name:" HorizontalAlignment="Left" Margin="382,186,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#FFE6E6E6" FontWeight="Bold"/>
     </Grid>
 </Window>
