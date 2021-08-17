@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TruthOrDare
 {
-    class Player
+    public class Player
     {
         public String Name { get; set; }
         public Player PlayerPicked { get; set; }

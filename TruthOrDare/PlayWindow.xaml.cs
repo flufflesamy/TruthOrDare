@@ -121,5 +121,23 @@ namespace TruthOrDare
 
             Clipboard.SetText(macroText);
         }
+
+        private void RemoveBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new ComboDialog(PlayerList);
+
+            if(dialog.ShowDialog() == true)
+            {
+                PlayerList.RemoveAll(p => p.Name == dialog.ResponseText);
+                if (dialog.ResponseText == PlayerList[currentPlayerIndex].Name)
+                {
+                    currentPlayerIndex -= 1;
+                }
+            }
+
+            UpdatePlayerList();
+            UpdatePrevNext();
+        }
+
     }
 }

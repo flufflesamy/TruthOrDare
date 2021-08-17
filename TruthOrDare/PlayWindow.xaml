@@ -13,19 +13,20 @@
             <ColumnDefinition Width="747*"/>
         </Grid.ColumnDefinitions>
         <Button x:Name="playAgainBtn" Content="Play Again" HorizontalAlignment="Left" Margin="594,375,0,0" VerticalAlignment="Top" Click="PlayAgain_Click" FontSize="20" FontWeight="Bold" Foreground="Red" Grid.Column="2"/>
-        <Button Content="Next Player" HorizontalAlignment="Left" Margin="390,375,0,0" VerticalAlignment="Top" Click="NextPlayer_Click" FontSize="20" FontWeight="Bold" Background="#FFEAEAEA" Grid.Column="2"/>
-        <Button Content="Previous Player" HorizontalAlignment="Left" Margin="174,375,0,0" VerticalAlignment="Top" Click="PrevPlayer_Click" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
-        <Button x:Name="appendBtn" Content="Append" HorizontalAlignment="Left" Margin="20,375,0,0" VerticalAlignment="Top" Click="Append_Click" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
+        <Button Content="Next Player" HorizontalAlignment="Left" Margin="426,375,0,0" VerticalAlignment="Top" Click="NextPlayer_Click" FontSize="20" FontWeight="Bold" Background="#FFEAEAEA" Grid.Column="2"/>
+        <Button Content="Previous Player" HorizontalAlignment="Left" Margin="229,375,0,0" VerticalAlignment="Top" Click="PrevPlayer_Click" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
+        <Button x:Name="appendBtn" Content="Append" HorizontalAlignment="Left" Margin="25,375,0,0" VerticalAlignment="Top" Click="Append_Click" FontSize="20" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="2"/>
         <Label Content="Current Player:" HorizontalAlignment="Left" Margin="20,35,0,0" VerticalAlignment="Top" Foreground="#FFEAEAEA" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
         <Label x:Name="currentPlayerLbl" Content="Player Name" HorizontalAlignment="Left" Margin="174,35,0,0" VerticalAlignment="Top" Foreground="Red" FontSize="20" FontWeight="Normal" Grid.Column="2"/>
-        <Label Content="Next Player:" HorizontalAlignment="Left" Margin="20,77,0,0" VerticalAlignment="Top" Foreground="#FFEAEAEA" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
-        <Label x:Name="nextPlayerLbl" Content="Player Name" HorizontalAlignment="Left" Margin="174,77,0,0" VerticalAlignment="Top" Foreground="Red" FontSize="20" FontWeight="Normal" Grid.Column="2"/>
-        <Label Content="Prev Player:" HorizontalAlignment="Left" Margin="20,119,0,0" VerticalAlignment="Top" Foreground="#FFEAEAEA" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
-        <Label x:Name="prevPlayerLbl" Content="Player Name" HorizontalAlignment="Left" Margin="174,119,0,0" VerticalAlignment="Top" Foreground="Red" FontSize="20" FontWeight="Normal" Grid.Column="2"/>
+        <Label Content="Next Player:" HorizontalAlignment="Left" Margin="20,119,0,0" VerticalAlignment="Top" Foreground="#FFEAEAEA" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
+        <Label x:Name="nextPlayerLbl" Content="Player Name" HorizontalAlignment="Left" Margin="174,119,0,0" VerticalAlignment="Top" Foreground="Red" FontSize="20" FontWeight="Normal" Grid.Column="2"/>
+        <Label Content="Prev Player:" HorizontalAlignment="Left" Margin="20,77,0,0" VerticalAlignment="Top" Foreground="#FFEAEAEA" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
+        <Label x:Name="prevPlayerLbl" Content="Player Name" HorizontalAlignment="Left" Margin="174,77,0,0" VerticalAlignment="Top" Foreground="Red" FontSize="20" FontWeight="Normal" Grid.Column="2"/>
         <TextBox x:Name="playersTxtbox" HorizontalAlignment="Left" Margin="434,77,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" Height="267" Grid.Column="2" Background="#FFEAEAEA" IsReadOnly="True"/>
         <Button x:Name="macroBtn" Content="Player List Macro" HorizontalAlignment="Left" Margin="20,186,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Click="macroBtn_Click" Grid.Column="2"/>
         <Button x:Name="remplayBtn" Content="Remaining Players Macro" HorizontalAlignment="Left" Margin="20,240,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Click="remplayBtn_Click" Grid.Column="2"/>
         <Label Content="Player List:" HorizontalAlignment="Left" Margin="434,35,0,0" VerticalAlignment="Top" Foreground="#FFEAEAEA" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
+        <Button x:Name="RemoveBtn" Content="Remove" Grid.Column="2" HorizontalAlignment="Left" Margin="99,375,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Click="RemoveBtn_Click"/>
 
     </Grid>
 </Window>
