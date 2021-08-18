@@ -45,6 +45,7 @@ namespace TruthOrDare
             }
 
             UpdatePlayerList();
+            UpdatePrevNext();
         }
 
         private void PlayAgain_Click(object sender, RoutedEventArgs e)
@@ -83,8 +84,7 @@ namespace TruthOrDare
         }
 
         private void UpdatePrevNext()
-        {
-            currentPlayerLbl.Content = PlayerList[currentPlayerIndex].Name;
+        {          
             if (currentPlayerIndex < PlayerList.Count -1)
             {
                 nextPlayerLbl.Content = PlayerList[currentPlayerIndex + 1].Name;
@@ -101,6 +101,16 @@ namespace TruthOrDare
             else
             {
                 prevPlayerLbl.Content = "First Player";
+                
+            }
+
+            if (PlayerList.Count > 0)
+            {
+                currentPlayerLbl.Content = PlayerList[currentPlayerIndex].Name;
+            }
+            else
+            {
+                currentPlayerLbl.Content = "No Players";
             }
         }
 
@@ -129,14 +139,19 @@ namespace TruthOrDare
             if(dialog.ShowDialog() == true)
             {
                 PlayerList.RemoveAll(p => p.Name == dialog.ResponseText);
-                if (dialog.ResponseText == PlayerList[currentPlayerIndex].Name)
+                if (PlayerList.Count > 1 && dialog.ResponseText == PlayerList[currentPlayerIndex].Name)
                 {
                     currentPlayerIndex -= 1;
+                    
                 }
             }
 
-            UpdatePlayerList();
-            UpdatePrevNext();
+            if (PlayerList.Count >= 0)
+            {
+                UpdatePlayerList();
+                UpdatePrevNext();
+            }
+            
         }
 
     }
